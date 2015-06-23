@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<tvschedule name="honggu" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="tvschedule.xsd">
+	
+	<channel chan="7">
+		<banner>KBS</banner>
+		<day>
+			<date>2014-09-11</date>
+			<holiday>not</holiday>
+			<programslot>
+				<time>14:00</time>
+				<title>위기탈출넘버원</title>
+				<description>재밌음</description>
+			</programslot>
+		</day>
+	</channel>
+
+	<channel chan="6">
+		<banner>SBS</banner>
+		<day>
+			<date>2014-09-12</date>
+			<holiday>not</holiday>
+			<programslot>
+				<time>14:00</time>
+				<title>런닝맨</title>
+			</programslot>
+		</day>
+	</channel>
+</tvschedule>

@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.lbsmap.MainActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff00bb00"
+        android:gravity="center"
+        android:text=" 너 어디야 ! 클럽?! "
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/txt_pn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="전화번호를 입력해주세요."
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/txt_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="암호코드를 입력해주세요." />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_modify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.02"
+            android:onClick="onClickBtn"
+            android:text="암호코드수정" />
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="156dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.49"
+            android:onClick="onClickBtn"
+            android:text="위치요청" />
+
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class="com.google.android.gms.maps.SupportMapFragment" />
+
+</LinearLayout>

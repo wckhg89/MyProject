@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">hw2_0319</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="titleName">QTIP</string>
+    <string name="amountName">Total Amount</string>
+    <string name="per15Name">15%</string>
+    <string name="per20Name">20%</string>
+    <string name="perOtherName">Other</string>
+    <string name="btnCalName">Calculate</string>
+
+</resources>

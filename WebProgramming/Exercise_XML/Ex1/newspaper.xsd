@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="newspaper">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="article" type ="article_type" maxOccurs="unbounded"
+					minOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+	<xs:complexType name="article_type">
+		<xs:sequence>
+			<xs:element name="headline" type="xs:string" />
+			<xs:element name="byline" type="xs:string" />
+			<xs:element name="lead" type="xs:string" />
+			<xs:element name="body" type="xs:string" />
+			<xs:element name="notes" type="xs:string" />
+		</xs:sequence>
+		<xs:attribute name="author" type="xs:string" use="required" />
+		<xs:attribute name="editor" type="xs:string" use="optional" />
+		<xs:attribute name="date" type="xs:string" use="optional" />
+		<xs:attribute name="edition" type="xs:string" use="optional" />
+	</xs:complexType>
+
+</xs:schema>

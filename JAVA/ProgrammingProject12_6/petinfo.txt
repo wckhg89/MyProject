@@ -1,0 +1,6 @@
+Decorate 6 11
+Fighter 11 15
+Absolute 5 6
+Infinite 4 4
+Gachon 5 10
+Nature 1 1

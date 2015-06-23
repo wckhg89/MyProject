@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#dddddd"
+    android:orientation="vertical"
+    tools:context="com.example.hw2_0319.MainActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/titleName"
+        android:textColor="#00dd00"
+        android:textSize="20pt" />
+
+    <EditText
+        android:id="@+id/Amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="@string/amountName"
+        android:inputType="number" />
+
+    <RadioGroup
+        android:id="@+id/percentGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/per15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/per15Name" >
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/per20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/per20Name" >
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/perOther"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/perOtherName" >
+        </RadioButton>
+
+        <EditText
+            android:id="@+id/otherInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.84"
+            android:inputType="number" >
+        </EditText>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnCal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/btnCalName" >
+    </Button>
+
+</LinearLayout>

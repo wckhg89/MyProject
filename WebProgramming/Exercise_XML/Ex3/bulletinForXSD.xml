@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<board xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="bulletin.xsd">
+	<boardname>자유게시판</boardname>
+	<articles>
+		<title>짱짱맨</title>
+		<message>완전짱짱맨이야</message>
+		<writerID>짱짱보이</writerID>
+		<writerName>유아인</writerName>
+		<reply>
+			<message>우왕</message>
+			<writerID>짱짱걸</writerID>
+			<writerName>김태희</writerName>
+		</reply>
+	</articles>
+</board>

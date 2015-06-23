@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HW3_B</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="friend_array">
+        <item>강홍구</item>
+        <item>최민준</item>
+        <item>변상민</item>
+        <item>전병선</item>
+        <item>김현우</item>
+        <item>을지문덕</item>
+        <item>강감찬</item>
+        <item>이순신</item>
+        <item>아이유</item>
+        <item>에이핑크</item>
+        <item>소녀시대</item>
+        <item>레인보우</item>
+    </string-array>
+    <string-array name="friend_email">
+        <item>wckhg89@naver.com</item>
+        <item>minjun@naver.com</item>
+        <item>sangmin@naver.com</item>
+        <item>byungsun@naver.com</item>
+        <item>hyunwoo@naver.com</item>
+        <item>eulji@naver.com</item>
+        <item>kamchan@naver.com</item>
+        <item>soonsin@naver.com</item>
+        <item>IU@naver.com</item>
+        <item>APink@naver.com</item>
+        <item>girls@naver.com</item>
+        <item>rainbow@naver.com</item>
+    </string-array>
+    <string-array name="friend_tel">
+        <item>010-6414-9810</item>
+        <item>010-6414-9811</item>
+        <item>010-6414-9812</item>
+        <item>010-6414-9813</item>
+        <item>010-6414-9814</item>
+        <item>010-6414-9815</item>
+        <item>010-6414-9816</item>
+        <item>010-6414-9817</item>
+        <item>010-6414-9818</item>
+        <item>010-6414-9819</item>
+        <item>010-6414-9820</item>
+        <item>010-6414-9821</item>
+    </string-array>
+    <string-array name="friend_disc">
+        <item>He is honggu</item>
+        <item>He is minjun</item>
+        <item>He is sangmin</item>
+        <item>He is byung</item>
+        <item>He is hyun</item>
+        <item>He is strong</item>
+        <item>He is strong</item>
+        <item>He is strong</item>
+        <item>She is pretty</item>
+        <item>She is pretty</item>
+        <item>She is pretty</item>
+        <item>She is pretty</item>
+    </string-array>
+
+</resources>

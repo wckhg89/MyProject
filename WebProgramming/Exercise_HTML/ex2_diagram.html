@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<canvas id="myCanvas" width="3000" height="3000"
+		style="border: 1px solid #d3d3d3;">
+</canvas>
+	<script>
+		var c = document.getElementById("myCanvas");
+		var ctx = c.getContext("2d");
+
+		ctx.strokeStyle = "puple";
+		ctx.rect(320, 320, 290, 140);
+		ctx.stroke();
+
+		//student
+		var grd = ctx.createRadialGradient(465,390,1,465,390,180); // creates  
+		grd.addColorStop(1,"red"); // first color stop
+		grd.addColorStop(0,"white"); // second color stop
+		// Fill with gradient
+		ctx.fillStyle = grd; // use the gradient grd
+		ctx.fillRect(320,320,290,140); //
+
+		ctx.beginPath();
+		ctx.fillStyle="black";
+		ctx.font = "30px Arial";
+		ctx.fillText("Student", 410, 400);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.moveTo(320, 320);
+		ctx.lineTo(200, 280);
+		ctx.stroke();
+		
+
+		//id
+		ctx.beginPath();
+		ctx.arc(160, 240, 60, 0, 2 * Math.PI);
+		ctx.stroke();
+
+		var grd2 = ctx.createRadialGradient(160,240,1,160,240,180); // creates  
+		grd2.addColorStop(1,"blue"); // first color stop
+		grd2.addColorStop(0,"white"); // second color stop
+		ctx.fillStyle = grd2; // use the gradient grd
+		ctx.fill();
+				
+		ctx.beginPath();
+		ctx.fillStyle="black";
+		ctx.font = "20px Arial";
+		ctx.fillText("ID", 150, 245);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.moveTo(140, 250);
+		ctx.lineTo(180, 250);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.moveTo(450, 320);
+		ctx.lineTo(450, 220);
+		ctx.stroke();
+
+		//birthday
+		ctx.beginPath();
+		ctx.moveTo(320, 390);
+		ctx.lineTo(200, 390);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.arc(140, 390, 60, 0, 2 * Math.PI);
+		ctx.stroke();
+		
+		var grd2 = ctx.createRadialGradient(140,390,1,140,390,180); // creates  
+		grd2.addColorStop(1,"blue"); // first color stop
+		grd2.addColorStop(0,"white"); // second color stop
+		ctx.fillStyle = grd2; // use the gradient grd
+		ctx.fill();
+
+		ctx.beginPath();
+		ctx.fillStyle="black";		
+		ctx.font = "20px Arial";
+		ctx.fillText("Birthday", 105, 395);
+		ctx.stroke();
+		
+		//age
+		ctx.beginPath();
+		ctx.moveTo(320, 460);
+		ctx.lineTo(220, 520);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.arc(160, 530, 60, 0, 2 * Math.PI);
+		ctx.stroke();
+		
+		var grd2 = ctx.createRadialGradient(160,530,1,160,530,180); // creates  
+		grd2.addColorStop(1,"blue"); // first color stop
+		grd2.addColorStop(0,"white"); // second color stop
+		ctx.fillStyle = grd2; // use the gradient grd
+		ctx.fill();
+
+		ctx.beginPath();
+		ctx.fillStyle="black";
+		ctx.font = "20px Arial";
+		ctx.fillText("Age", 140, 535);
+		ctx.stroke();
+
+		//Name		
+		ctx.beginPath();
+		ctx.arc(450, 160, 60, 0, 2 * Math.PI);
+		ctx.stroke();
+
+		var grd2 = ctx.createRadialGradient(450,160,1,450,160,180); // creates  
+		grd2.addColorStop(1,"blue"); // first color stop
+		grd2.addColorStop(0,"white"); // second color stop
+		ctx.fillStyle = grd2; // use the gradient grd
+		ctx.fill();
+
+		ctx.beginPath();
+		ctx.fillStyle="black";
+		ctx.font = "20px Arial";
+		ctx.fillText("Name", 423, 165);
+		ctx.stroke();
+				
+		//address
+		ctx.beginPath();
+		ctx.moveTo(610, 320);
+		ctx.lineTo(710, 280);
+		ctx.stroke();
+		
+		ctx.beginPath();
+
+		ctx.arc(750, 240, 60, 0, 2 * Math.PI);
+		ctx.stroke();
+		
+		var grd2 = ctx.createRadialGradient(750,240,1,750,240,180); // creates  
+		grd2.addColorStop(1,"blue"); // first color stop
+		grd2.addColorStop(0,"white"); // second color stop
+		ctx.fillStyle = grd2; // use the gradient grd
+		ctx.fill();
+
+		ctx.beginPath();
+		ctx.fillStyle="black";
+		ctx.font = "20px Arial";
+		ctx.fillText("Address", 715, 245);
+		ctx.stroke();
+		
+		//line
+		ctx.moveTo(610, 380);
+		ctx.lineTo(1010, 380);
+		ctx.stroke();
+		
+		//마름보
+		ctx.beginPath();
+		ctx.moveTo(1010,380);
+		ctx.lineTo(1110,280);
+		ctx.lineTo(1210,380);
+		ctx.lineTo(1110,480);  
+        ctx.lineTo(1010,380);
+		ctx.stroke();
+		ctx.closePath();     
+
+		var grd2 = ctx.createRadialGradient(1110,380,1,1110,380,180); // creates  
+		grd2.addColorStop(1,"green"); // first color stop
+		grd2.addColorStop(0,"white"); // second color stop
+		ctx.fillStyle = grd2; // use the gradient grd
+		ctx.fill();
+
+		ctx.beginPath();
+		ctx.fillStyle="black";
+		ctx.font = "20px Arial";
+		ctx.fillText("In", 1100, 390);
+		ctx.stroke();
+		
+		//line
+		ctx.moveTo(1210, 380);
+		ctx.lineTo(1610, 380);
+		ctx.stroke();
+		
+		//Department
+		ctx.strokeStyle = "puple";
+		ctx.rect(1610, 310, 290, 140);
+		ctx.stroke();
+
+		var grd = ctx.createRadialGradient(1755,380,1,1755,380,180); // creates  
+		grd.addColorStop(1,"red"); // first color stop
+		grd.addColorStop(0,"white"); // second color stop
+		// Fill with gradient
+		ctx.fillStyle = grd; // use the gradient grd
+		ctx.fillRect(1610,310,290,140); //
+
+		ctx.beginPath();
+		ctx.fillStyle="black";
+		ctx.font = "20px Arial";
+		ctx.fillText("Department", 1705, 390);
+		ctx.stroke();
+
+		//Name	
+		ctx.beginPath();
+		ctx.arc(1470, 180, 60, 0, 2 * Math.PI);
+		ctx.stroke();
+				
+		var grd2 = ctx.createRadialGradient(1470,180,1,1470,140,180); // creates  
+		grd2.addColorStop(1,"blue"); // first color stop
+		grd2.addColorStop(0,"white"); // second color stop
+		ctx.fillStyle = grd2; // use the gradient grd
+		ctx.fill();
+
+		ctx.beginPath();
+		ctx.fillStyle="black";
+		ctx.font = "20px Arial";
+		ctx.fillText("Name", 1443, 187);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.moveTo(1443, 197);
+		ctx.lineTo(1493, 197);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.moveTo(1610, 310);
+		ctx.lineTo(1510, 220);
+		ctx.stroke();
+		
+		//Office
+		ctx.beginPath();
+		ctx.arc(1710, 150, 60, 0, 2 * Math.PI);
+		ctx.stroke();
+				
+		var grd2 = ctx.createRadialGradient(1710,150,1,1710,150,180); // creates  
+		grd2.addColorStop(1,"blue"); // first color stop
+		grd2.addColorStop(0,"white"); // second color stop
+		ctx.fillStyle = grd2; // use the gradient grd
+		ctx.fill();
+
+		ctx.beginPath();
+		ctx.fillStyle="black";
+		ctx.font = "20px Arial";
+		ctx.fillText("Office", 1685, 155);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.moveTo(1710, 310);
+		ctx.lineTo(1710, 210);
+		ctx.stroke();
+
+		//Phone
+		ctx.beginPath();
+		ctx.arc(2000, 150, 60, 0, 2 * Math.PI);
+		ctx.stroke();
+				
+		var grd2 = ctx.createRadialGradient(2000,150,1,2000,150,180); // creates  
+		grd2.addColorStop(1,"blue"); // first color stop
+		grd2.addColorStop(0,"white"); // second color stop
+		ctx.fillStyle = grd2; // use the gradient grd
+		ctx.fill();
+
+		ctx.beginPath();
+		ctx.fillStyle="black";
+		ctx.font = "20px Arial";
+		ctx.fillText("Phone", 1975, 155);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.moveTo(1900, 310);
+		ctx.lineTo(1990, 210);
+		ctx.stroke();
+
+	</script>
+</body>
+</html>

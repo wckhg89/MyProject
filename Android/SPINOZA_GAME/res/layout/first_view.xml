@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity = "center"
+        android:src="@drawable/mainview" />
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/btn_start"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/startbtn"
+        android:onClick="clickBtn"
+         >
+    </Button>
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/btn_info"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/tutobtn"
+        android:onClick="clickBtn"
+         >
+    </Button>
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/btn_rank"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/rankbtn"
+        android:onClick="clickBtn"
+         >
+    </Button>
+	<Button
+	    android:layout_marginTop="20dp"
+        android:id="@+id/btn_invite"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/kakaobtn"
+        android:onClick="clickBtn"
+         >
+    </Button>
+    
+	<TextView
+	    android:text="release ver 2.1"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right">
+	    
+	</TextView>
+    
+</LinearLayout>

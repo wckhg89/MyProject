@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Exercise 3</title>
+<script> 
+	function loadXMLDoc(filename) {
+	  xhttp = new XMLHttpRequest();
+	  xhttp.open("GET",filename,false);
+	  xhttp.send();
+	  return xhttp.responseXML;
+	}
+	
+	function addBooks() {
+		var xmlDoc = loadXMLDoc("books.xml");	
+		var book1 = xmlDoc.createElement("book");
+		
+		var elementTitle1 = xmlDoc.createElement("title");
+		var elementAuthor1 = xmlDoc.createElement("author");
+		var elementYear1 = xmlDoc.createElement("year");
+		var elementPrice1 = xmlDoc.createElement("price");
+		
+		var textTitle1 = xmlDoc.createTextNode("WebProgramming");
+		var textAuthor1 = xmlDoc.createTextNode("kim");
+		var textYear1 = xmlDoc.createTextNode("2011");
+		var textPrice1 = xmlDoc.createTextNode("42.65");
+		
+		elementTitle1.appendChild(textTitle1);
+		book1.appendChild(elementTitle1);
+		
+		elementAuthor1.appendChild(textAuthor1);
+		book1.appendChild(elementAuthor1);
+		
+		elementYear1.appendChild(textYear1);
+		book1.appendChild(elementYear1);
+		
+		elementPrice1.appendChild(textPrice1);
+		book1.appendChild(elementPrice1);
+		
+		book1.setAttribute("category", "computer");
+		
+		var book2 = xmlDoc.createElement("book");
+		
+		var elementTitle2 = xmlDoc.createElement("title");
+		var elementAuthor2 = xmlDoc.createElement("author");
+		var elementYear2 = xmlDoc.createElement("year");
+		var elementPrice2 = xmlDoc.createElement("price");
+		
+		var textTitle2 = xmlDoc.createTextNode("Database");
+		var TextAutohr2 = xmlDoc.createTextNode("Kang");
+		var textYear2 = xmlDoc.createTextNode("2014");
+		var textPrice2 = xmlDoc.createTextNode("60.85");
+		
+		elementTitle2.appendChild(textTitle2);
+		book2.appendChild(elementTitle2);
+		
+		elementAuthor2.appendChild(TextAutohr2);
+		book2.appendChild(elementAuthor2);
+		
+		elementYear2.appendChild(textYear2);
+		book2.appendChild(elementYear2);
+		
+		elementPrice2.appendChild(textPrice2);
+		book2.appendChild(elementPrice2);
+		
+		book2.setAttribute("category", "computer");
+		
+		var book3 = xmlDoc.createElement("book");
+		
+		var elementTitle3 = xmlDoc.createElement("title");
+		var elementAuthor3 = xmlDoc.createElement("author");
+		var elementYear3 = xmlDoc.createElement("year");
+		var elementPrice3 = xmlDoc.createElement("price");
+		
+		var textTitle3 = xmlDoc.createTextNode("C++");
+		var textAuthor3 = xmlDoc.createTextNode("Choi");
+		var textYear3 = xmlDoc.createTextNode("2010");
+		var textPrice3 = xmlDoc.createTextNode("43.25");
+		
+		elementTitle3.appendChild(textTitle3);
+		book3.appendChild(elementTitle3);
+		
+		elementAuthor3.appendChild(textAuthor3);
+		book3.appendChild(elementAuthor3);
+		
+		elementYear3.appendChild(textYear3);
+		book3.appendChild(elementYear3);
+		
+		elementPrice3.appendChild(textPrice3);
+		book3.appendChild(elementPrice3);
+		
+		book3.setAttribute("category", "computer");
+	
+		var root = xmlDoc.documentElement; 
+		root.appendChild(book1);
+		root.appendChild(book2);
+		root.appendChild(book3);
+	
+		var tb_Row;
+		var tb_Cell;
+		var allBooks = root.childNodes;
+		
+		tb_Row = infoTable.insertRow();
+		tb_Cell = tb_Row.insertCell();
+		tb_Cell.innerText = "TITLE";
+		tb_Cell = tb_Row.insertCell();
+		tb_Cell.innerText = "AUTHOR";
+		tb_Cell = tb_Row.insertCell();
+		tb_Cell.innerText = "YEAR";
+	
+		for (i=0; i<allBooks.length; i++) {  
+			var allInfo = "";
+			var bTitle = "";
+			var allAuthors = "";
+			var bAuthor = "";
+			var bYear = "";
+		
+			if (allBooks[i].nodeType == 1) {
+				allInfo = allBooks[i].childNodes;
+				for (k=0; k<allInfo.length; k++) {
+					if (allInfo[k].nodeType == 1) {
+						if(allInfo[k].nodeName == "title") {
+							bTitle = allInfo[k].childNodes[0].nodeValue;			
+						}
+						else if(allInfo[k].nodeName == "author") {
+							allAuthors = allInfo[k].childNodes;
+							for(j=0 ; j<allAuthors.length; j++) {
+								bAuthor = allAuthors[j].nodeValue+ "\n" +bAuthor;
+							}
+						}
+						else if(allInfo[k].nodeName == "year") {
+							bYear = allInfo[k].childNodes[0].nodeValue;
+						}
+					}
+				}			
+				tb_Row = infoTable.insertRow();
+				tb_Cell = tb_Row.insertCell();
+				tb_Cell.innerText = bTitle;
+				tb_Cell = tb_Row.insertCell();
+				tb_Cell.innerText = bAuthor;
+				tb_Cell = tb_Row.insertCell();
+				tb_Cell.innerText = bYear;					
+			}
+		}
+	}
+	
+	function findCDs() {
+		var tb_Row;
+		var tb_Cell;
+		var xmlDoc = loadXMLDoc("cd_catalog.xml");
+		var root = xmlDoc.documentElement;  		
+		var allCDs = root.childNodes;
+		
+		tb_Row = infoTable.insertRow();
+		tb_Cell = tb_Row.insertCell();
+		tb_Cell.innerText = "TITLE";
+		tb_Cell = tb_Row.insertCell();
+		tb_Cell.innerText = "ARTIST";
+		tb_Cell = tb_Row.insertCell();
+		tb_Cell.innerText = "PRICE";
+		tb_Cell = tb_Row.insertCell();
+		tb_Cell.innerText = "YEAR";
+	
+		for (i=0; i<allCDs.length; i++) {  
+			var allInfo = "";
+			var cTitle = "";
+			var cArtist = "";
+			var cPrice = "";
+			var cYear = "";
+		
+			if (allCDs[i].nodeType == 1) {
+				allInfo = allCDs[i].childNodes;
+				for (k=0; k<allInfo.length; k++) {
+					if (allInfo[k].nodeType == 1) {
+						if(allInfo[k].nodeName == "TITLE") {
+							cTitle = allInfo[k].childNodes[0].nodeValue;			
+						}
+						else if(allInfo[k].nodeName == "ARTIST") {
+							cArtist = allInfo[k].childNodes[0].nodeValue;
+						}
+						else if(allInfo[k].nodeName == "PRICE") {
+							var priceIndex = k;
+							cPrice = allInfo[k].childNodes[0].nodeValue;
+						}
+						else if(allInfo[k].nodeName == "YEAR") {
+							cYear = allInfo[k].childNodes[0].nodeValue;
+						}
+					}
+				}
+
+				if (Number(cYear) < 1995) {
+					var lowerPrice = allInfo[priceIndex].childNodes[0].nodeValue;
+					lowerPrice = Number(lowerPrice) - Number(lowerPrice) * 0.1;
+					cPrice = lowerPrice;
+					tb_Row = infoTable.insertRow();
+					tb_Cell = tb_Row.insertCell();
+					tb_Cell.innerText = cTitle;
+					tb_Cell = tb_Row.insertCell();
+					tb_Cell.innerText = cArtist;
+					tb_Cell = tb_Row.insertCell();
+					tb_Cell.innerText = cPrice;
+					tb_Cell = tb_Row.insertCell();
+					tb_Cell.innerText = cYear;	
+				}
+			}
+		}
+	}
+	
+</script>
+</head>
+<body>
+	<button type="button" onclick="addBooks()">Add 3</button> </br>
+	<button type="button" onclick="findCDs()">CDs(1995)</button> </br>
+	
+	<table id=infoTable border=1>  
+	</table>
+</body>
+</html>

@@ -1,0 +1,2 @@
+my name   is kanghonggu.   What      output is produced  by the following code?
+Can the body  of a while loop execute zero  times? can the body      of a do-while loop execute zero time.

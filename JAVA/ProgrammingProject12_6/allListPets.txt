@@ -1,0 +1,25 @@
+<<All list of your pet>>
+----------------------------------------------------
+No.1's pet's name is Nature
+No.1's pet's age is 1
+No.1's pet's weight is 1.0
+----------------------------------------------------
+No.2's pet's name is Gachon
+No.2's pet's age is 5
+No.2's pet's weight is 10.0
+----------------------------------------------------
+No.3's pet's name is Infinite
+No.3's pet's age is 4
+No.3's pet's weight is 4.0
+----------------------------------------------------
+No.4's pet's name is Absolute
+No.4's pet's age is 5
+No.4's pet's weight is 6.0
+----------------------------------------------------
+No.5's pet's name is Fighter
+No.5's pet's age is 11
+No.5's pet's weight is 15.0
+----------------------------------------------------
+No.6's pet's name is Decorate
+No.6's pet's age is 6
+No.6's pet's weight is 11.0

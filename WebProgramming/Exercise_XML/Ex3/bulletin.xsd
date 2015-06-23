@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="board">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="boardname" maxOccurs="1" />
+				<xs:element name="articles" type="article_type"
+					maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="article_type">
+		<xs:sequence>
+			<xs:element name="title" maxOccurs="1" />
+			<xs:element name="message" maxOccurs="1" />
+			<xs:element name="writerID" maxOccurs="1" />
+			<xs:element name="writerName" maxOccurs="1" />
+			<xs:element name="reply" type="reply_type" maxOccurs="unbounded"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="reply_type">
+		<xs:sequence>
+			<xs:element name="message" maxOccurs="1" />
+			<xs:element name="writerID" maxOccurs="1" />
+			<xs:element name="writerName" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

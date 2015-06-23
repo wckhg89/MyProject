@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<newspaper xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="newspaper.xsd">
+	<article author="honggukang">
+		<headline>인천아시안게임</headline>
+		<byline>인천</byline>
+		<lead>아시안</lead>
+		<body>게임</body>
+		<notes>짱짱맨</notes>
+	</article>
+	
+	<article author="hongpalkang">
+		<headline>아시안컴</headline>
+		<byline>아시안</byline>
+		<lead>컵</lead>
+		<body>우승</body>
+		<notes>짱짱맨</notes>
+	</article>
+	
+</newspaper>

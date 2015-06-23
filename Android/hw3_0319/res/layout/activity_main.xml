@@ -1,0 +1,120 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0000ff"
+    android:orientation="vertical"
+    tools:context="com.example.hw3_0319.MainActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <EditText
+        android:id="@+id/enterName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:hint="Enter your Name"
+        android:textColor="#ffffff"
+        android:inputType="text" >
+    </EditText>
+
+    <EditText
+        android:id="@+id/phoneNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:hint="Your phone number"
+        android:textColor="#ffffff"
+        android:inputType="number" >
+    </EditText>
+
+    <RadioGroup
+        android:id="@+id/menuGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/sel1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="짜장면"
+            android:textColor="#ffffff" >
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/sel2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="짬뽕"
+            android:textColor="#ffffff" >
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/sel3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="볶음밥"
+            android:textColor="#ffffff" >
+        </RadioButton>
+    </RadioGroup>
+	
+    <RadioGroup
+        android:id="@+id/menuGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/selSecond1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="보통"
+            android:textColor="#ffffff" >
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/selSecond2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="곱배기"
+            android:textColor="#ffffff" >
+        </RadioButton>
+
+     
+    </RadioGroup>
+    
+    <CheckBox
+        android:id="@+id/chk1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="단무지많이"
+        android:textColor="#ffffff" >
+    </CheckBox>
+
+    <CheckBox
+        android:id="@+id/chk2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="맵게"
+        android:textColor="#ffffff" >
+    </CheckBox>
+
+    <CheckBox
+        android:id="@+id/chk3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="배달"
+        android:textColor="#ffffff" >
+    </CheckBox>
+
+    <Button
+        android:id="@+id/confrimBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="SMS - place you order"
+        android:textColor="#ffffff" >
+    </Button>
+
+</LinearLayout>

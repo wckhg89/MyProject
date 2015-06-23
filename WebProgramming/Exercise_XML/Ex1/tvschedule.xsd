@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="tvschedule">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="channel" type="channel_type" maxOccurs="unbounded"
+					minOccurs="1">
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="channel_type">
+		<xs:sequence>
+			<xs:element name="banner" type="xs:string" />
+			<xs:element name="day" type="day_type" maxOccurs="unbounded"
+				minOccurs="1" />
+		</xs:sequence>
+		<xs:attribute name="chan" type="xs:string" use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="day_type">
+		<xs:sequence>
+			<xs:element name="date" type="xs:date" />
+			<xs:element name="holiday" type="xs:string" />
+			<xs:element name="programslot" type="prog_type" maxOccurs="unbounded"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="prog_type">
+		<xs:sequence>
+			<xs:element name="time" type="xs:string" />
+			<xs:element name="title" type="xs:string"/>
+			<xs:element name="description" type="xs:string" maxOccurs="1"
+				minOccurs="0" />
+		</xs:sequence>
+		<xs:attribute name="vtr" type="xs:string" use="optional" />
+	</xs:complexType>
+</xs:schema>

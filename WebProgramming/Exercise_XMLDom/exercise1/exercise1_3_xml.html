@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+	function loadXMLDoc(filename) {
+		xhttp = new XMLHttpRequest();
+		xhttp.open("GET", filename, false);
+		xhttp.send();
+
+		return xhttp.responseXML;
+	}
+
+	function searchNode() {
+		var xmlDoc = loadXMLDoc("books.xml");
+		var node = xmlDoc.getElementsByTagName("book")[1];
+
+		/* firstChild(node);
+		lastChild(node);
+		nextSibling(node);
+		prevSibling(node); */
+		childNodes(node);
+
+	}
+
+	function firstChild(node) {
+		var firstElement;
+
+		for (i = 0; i < node.childNodes.length; i++) {
+
+			if (node.childNodes[i].nodeType == 3) {
+				if (node.childNodes[i].nodeValue.trim() == "") {
+				} else {
+					firstElement = node.childNodes[i];
+					break;
+				}
+			} else {
+				firstElement = node.childNodes[i];
+				break;
+			}
+
+		}
+
+		document.write("First Child Node element is " + firstElement.nodeName);
+
+		return firstElement;
+	}
+
+	function lastChild(node) {
+
+		var lastElement;
+
+		if (node.childNodes[i].nodeType == 3) {
+			if (node.childNodes[i].nodeValue.trim() == "") {
+			} else {
+				lastElement = node.childNodes[i];
+			}
+		} else {
+			lastElement = node.childNodes[i];
+		}
+		document
+				.write("<br>Last Child Node element is " + lastElement.nodeName);
+
+		return lastElement;
+	}
+
+	function nextSibling(node) {
+		var next = node.nextSibling;
+
+		while (next.nodeType != 1) {
+			next = next.nextSibling;
+		}
+
+		document.write("<br>Next Sibling Node element is " + next.nodeName);
+		return next;
+	}
+
+	function prevSibling(node) {
+		var prev = node.previousSibling;
+
+		while (prev.nodeType != 1) {
+			prev = prev.previousSibling;
+		}
+		document.write("<br>Previous Sibling Node element is " + prev.nodeName);
+
+		return prev;
+	}
+	
+	function childNodes(node){
+		var arr_n;
+		var f_n = firstChild(node);		
+		arr_n += f_n;
+		while(true){
+			if(f_n.nodeType !=1) break;
+			f_n = nextSibling(f_n);
+			arr_n += f_n;
+		}
+		return arr_n;
+	}
+</script>
+</head>
+<body>
+	<button type="button" onclick="searchNode()">Exercise1-3</button>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+	function loadJSONDoc() {
+		var select = document.getElementById("cd").value;
+
+		var xmlhttp = new XMLHttpRequest();
+		var url = "cd_catalog.json";
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+				if (select == 'title') {
+					var html = "<table border='1'><th>TITLE</th>";
+					var arr = JSON.parse(xmlhttp.responseText);
+					for (var i = 0; i < arr.length; i++) {
+						html += '<tr><td>' + arr[i].TITLE + '</td></tr>'
+					}
+					html += '</table>'
+					document.getElementById("menus").innerHTML = html;
+
+				} else if (select == 'artist') {
+					var html = "<table border='1'><th>ARTIST</th>";
+					var arr = JSON.parse(xmlhttp.responseText);
+					for (var i = 0; i < arr.length; i++) {
+						html += '<tr><td>' + arr[i].ARTIST + '</td></tr>'
+					}
+					html += '</table>'
+					document.getElementById("menus").innerHTML = html;
+				} else if (select == 'country') {
+					var html = "<table border='1'><th>COUNTRY</th>";
+					var arr = JSON.parse(xmlhttp.responseText);
+					for (var i = 0; i < arr.length; i++) {
+						html += '<tr><td>' + arr[i].COUNTRY + '</td></tr>'
+					}
+					html += '</table>'
+					document.getElementById("menus").innerHTML = html;
+				} else if (select == 'company') {
+					var html = "<table border='1'><th>COMPANY</th>";
+					var arr = JSON.parse(xmlhttp.responseText);
+					for (var i = 0; i < arr.length; i++) {
+						html += '<tr><td>' + arr[i].COMPANY + '</td></tr>'
+					}
+					html += '</table>'
+					document.getElementById("menus").innerHTML = html;
+					
+				} else if (select == 'price') {
+					var html = "<table border='1'><th>PRICE</th>";
+					var arr = JSON.parse(xmlhttp.responseText);
+					for (var i = 0; i < arr.length; i++) {
+						html += '<tr><td>' + arr[i].PRICE + '</td></tr>'
+					}
+					html += '</table>'
+					document.getElementById("menus").innerHTML = html;
+				} else if (select == 'year') {
+					var html = "<table border='1'><th>YEAR</th>";
+					var arr = JSON.parse(xmlhttp.responseText);
+					for (var i = 0; i < arr.length; i++) {
+						html += '<tr><td>' + arr[i].YEAR + '</td></tr>'
+					}
+					html += '</table>'
+					document.getElementById("menus").innerHTML = html;
+				}
+
+			}
+		}
+		xmlhttp.open("GET", url, true);
+		xmlhttp.send();
+
+		function showMenus(arr) {
+			var html = "";
+			for (var i = 0; i < arr.length; i++) {
+				html += '<a href="'+ arr[i].TITLE + '">' + arr[i].TITLE
+						+ '</a><br>';
+			}
+			document.getElementById("menus").innerHTML = html;
+
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>Select a Field to Show :</h1>
+	<select id="cd">
+		<option value="title">TITLE</option>
+		<option value="artist">ARTIST</option>
+		<option value="country">COUNTRY</option>
+		<option value="company">COMPANY</option>
+		<option value="price">PRICE</option>
+		<option value="year">YEAR</option>
+	</select>
+	<button type="button" onclick="loadJSONDoc()">Show values</button>
+
+	<div id="menus"></div>
+</body>
+</html>

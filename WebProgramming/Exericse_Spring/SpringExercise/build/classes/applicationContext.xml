@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- Your entries will go here -->
+	<bean id="employee1" class="com.employee.EmployeeBean">
+		<property name="id" value="1" />
+		<property name="name" value="kanghonggu" />
+	</bean>
+
+	<bean id="employee2" class="com.employee.EmployeeBean">
+		<constructor-arg value="2" />
+		<constructor-arg value="choiminjun" />
+	</bean>
+
+	<bean id="car1" class="com.car.CarFactory" factory-method="makeCar">
+		<constructor-arg value="Sonata" />
+		<constructor-arg value="2010" />
+		<constructor-arg value="Hyundai" />
+	</bean>
+	<bean id="car2" class="com.car.CarFactory" factory-method="makeCar">
+		<constructor-arg value="Avante" />
+		<constructor-arg value="2012" />
+		<constructor-arg value="Hyundai" />
+	</bean>
+	<bean id="car3" class="com.car.CarFactory" factory-method="makeCar">
+		<constructor-arg value="Grandual" />
+		<constructor-arg value="2013" />
+
+	</bean>
+	<bean id="car4" class="com.car.CarFactory" factory-method="makeCar">
+		<constructor-arg value="Aslan" />
+		<constructor-arg value="2014" />
+	</bean>
+	
+	<bean id="care1" class="com.caremp.CarFactory" factory-method="makeCar">
+		<constructor-arg value="Aslan" />
+		<constructor-arg value="2013" />
+	</bean>
+	<bean id="care2" class="com.caremp.CarFactory" factory-method="makeCar">
+		<constructor-arg value="Sorento" />
+		<constructor-arg value="2014" />
+	</bean>
+	<bean id="care3" class="com.caremp.CarFactory" factory-method="makeCar">
+		<constructor-arg value="Aslan" />
+		<constructor-arg value="2013" />
+
+	</bean>
+	<bean id="care4" class="com.caremp.CarFactory" factory-method="makeCar">
+		<constructor-arg value="Mohabi" />
+		<constructor-arg value="2014" />
+	</bean>
+	
+	<bean id="employeec1" class="com.caremp.EmployeeBean">
+		<constructor-arg value="1" />
+		<constructor-arg value="choiminjun" />
+		<constructor-arg>
+		<list>
+			<ref bean = "care1" />
+		</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="employeec2" class="com.caremp.EmployeeBean">
+		<constructor-arg value="2" />
+		<constructor-arg value="kanghonggu" />
+		<constructor-arg>
+		<list>
+			<ref bean = "care2" />
+		</list>
+		</constructor-arg>
+	</bean>
+	<bean id="employeec3" class="com.caremp.EmployeeBean">
+		<constructor-arg value="3" />
+		<constructor-arg value="Byunsangmin" />
+		<constructor-arg>
+		<list>
+			<ref bean = "care3" />
+		</list>
+		</constructor-arg>
+	</bean>
+	<bean id="employeec4" class="com.caremp.EmployeeBean">
+		<constructor-arg value="4" />
+		<constructor-arg value="junbyunsun" />
+		<constructor-arg>
+		<list>
+			<ref bean = "care4" />
+		</list>
+		</constructor-arg>
+	</bean>
+</beans>

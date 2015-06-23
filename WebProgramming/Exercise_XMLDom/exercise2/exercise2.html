@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Exercise 2</title>
+<script>
+	function loadXMLDoc(filename) {
+		xhttp = new XMLHttpRequest();
+		xhttp.open("GET", filename, false);
+		xhttp.send();
+		return xhttp.responseXML;
+	}
+
+	function findAllBooks() {
+		var tb_Row;
+		var tb_Cell;
+		var xmlDoc = loadXMLDoc("books.xml");
+		var root = xmlDoc.documentElement;
+		var allBooks = root.childNodes;
+
+		tb_Row = infoTable.insertRow();
+		tb_Cell = tb_Row.insertCell();
+		tb_Cell.innerText = "TITLE";
+		tb_Cell = tb_Row.insertCell();
+		tb_Cell.innerText = "AUTHOR";
+		tb_Cell = tb_Row.insertCell();
+		tb_Cell.innerText = "YEAR";
+
+		for (i = 0; i < allBooks.length; i++) {
+			var booksInfo = "";
+			var books_title = "";
+			var authors = "";
+			var book_author = "";
+			var book_year = "";
+
+			if (allBooks[i].nodeType == 1) {
+				booksInfo = allBooks[i].childNodes;
+				for (k = 0; k < booksInfo.length; k++) {
+					if (booksInfo[k].nodeType == 1) {
+						if (booksInfo[k].nodeName == "title") {
+							books_title = booksInfo[k].childNodes[0].nodeValue;
+						} else if (booksInfo[k].nodeName == "author") {
+							authors = booksInfo[k].childNodes;
+							for (j = 0; j < authors.length; j++) {
+								book_author = authors[j].nodeValue + "\n"
+										+ book_author;
+							}
+						} else if (booksInfo[k].nodeName == "year") {
+							book_year = booksInfo[k].childNodes[0].nodeValue;
+						}
+					}
+				}
+				tb_Row = infoTable.insertRow();
+				tb_Cell = tb_Row.insertCell();
+				tb_Cell.innerText = books_title;
+				tb_Cell = tb_Row.insertCell();
+				tb_Cell.innerText = book_author;
+				tb_Cell = tb_Row.insertCell();
+				tb_Cell.innerText = book_year;
+			}
+		}
+	}
+
+	function findAllCDs() {
+		var tb_Row;
+		var tb_Cell;
+		var xmlDoc = loadXMLDoc("cd_catalog.xml");
+		var root = xmlDoc.documentElement;
+		var allCDs = root.childNodes;
+
+		tb_Row = infoTable.insertRow();
+		tb_Cell = tb_Row.insertCell();
+		tb_Cell.innerText = "TITLE";
+		tb_Cell = tb_Row.insertCell();
+		tb_Cell.innerText = "ARTIST";
+		tb_Cell = tb_Row.insertCell();
+		tb_Cell.innerText = "YEAR";
+
+		for (i = 0; i < allCDs.length; i++) {
+			var booksInfo = "";
+			var cd_Title = "";
+			var cd_Artist = "";
+			var cd_Year = "";
+
+			if (allCDs[i].nodeType == 1) {
+				booksInfo = allCDs[i].childNodes;
+				for (k = 0; k < booksInfo.length; k++) {
+					if (booksInfo[k].nodeType == 1) {
+						if (booksInfo[k].nodeName == "TITLE") {
+							cd_Title = booksInfo[k].childNodes[0].nodeValue;
+						} else if (booksInfo[k].nodeName == "ARTIST") {
+							cd_Artist = booksInfo[k].childNodes[0].nodeValue;
+						} else if (booksInfo[k].nodeName == "YEAR") {
+							cd_Year = booksInfo[k].childNodes[0].nodeValue;
+						}
+					}
+				}
+
+				if (Number(cd_Year) >= 1990) {
+					tb_Row = infoTable.insertRow();
+					tb_Cell = tb_Row.insertCell();
+					tb_Cell.innerText = cd_Title;
+					tb_Cell = tb_Row.insertCell();
+					tb_Cell.innerText = cd_Artist;
+					tb_Cell = tb_Row.insertCell();
+					tb_Cell.innerText = cd_Year;
+				}
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<button type="button" onclick="findAllBooks()">BOOKs</button>
+	</br>
+	<button type="button" onclick="findAllCDs()">CDs()1990)</button>
+	</br>
+
+	<table id=infoTable border=1>
+	</table>
+</body>
+</html>
